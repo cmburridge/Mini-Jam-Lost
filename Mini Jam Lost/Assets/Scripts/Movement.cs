@@ -5,20 +5,20 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    public CharacterController controller;
     public GameObject art;
-    public Vector3 mouseLoc;
 
     // Update is called once per frame
     void Update()
     {
+        art.transform.position = this.transform.position;
+        
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
  
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         art.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
  
-        if (rotationZ < -90 || rotationZ > 90)
+        //if (rotationZ < -90 || rotationZ > 90)
         {
             if(transform.eulerAngles.y == 0)
             {
