@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e2aff7c789e5e4eb76c59d9cb7df67, type: 3}
   m_Name: Power
   m_EditorClassIdentifier: 
-  value: 14.430343
+  value: -0.00012801283
   OGValue: 35

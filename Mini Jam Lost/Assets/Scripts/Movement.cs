@@ -12,18 +12,25 @@ public class Movement : MonoBehaviour
     public bool isOn = true;
     public FloatData power;
     public float amount;
+    public GameObject text;
 
     private float speedmax;
     private float speedmin;
 
     private void Start()
     {
-        speed.value -= 1;
-        speedmin = speed.value;
         speed.value += 1;
         speedmax = speed.value;
+        speed.value -= 1;
+        speedmin = speed.value;
     }
 
+    public void Boost(float amount)
+    {
+        speedmax += amount;
+        speedmin += amount;
+    }
+    
     void Update()
     {
         if (power.value != 0)
@@ -32,21 +39,23 @@ public class Movement : MonoBehaviour
             {
                 if (isOn == true)
                 {
-                    speed.value = speedmax;
+                    speed.value = speedmin;
                     isOn = false;
                     flashLight.SetActive(false);
                 }
                 else if (isOn == false)
                 {
-                    speed.value = speedmin;
+                    text.SetActive(false);
+                    speed.value = speedmax;
                     isOn = true;
                     flashLight.SetActive(true);
                 }
             }  
         }
-        else if (power.value <= 0)
+        
+        if (power.value <= 0)
         {
-            speed.value = speedmax;
+            speed.value = speedmin;
             isOn = false;
             flashLight.SetActive(false);
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class Timer : MonoBehaviour
         TimerStart();
     }
     
-    void TimerStart()
+    public void TimerStart()
     {
         StartCoroutine(timerTime());
     }
