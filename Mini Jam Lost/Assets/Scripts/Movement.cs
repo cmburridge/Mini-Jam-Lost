@@ -7,9 +7,27 @@ public class Movement : MonoBehaviour
     public float speed;
     public GameObject art;
 
-    // Update is called once per frame
+    public GameObject flashLight;
+    public bool isOn = true;
+    
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isOn == true)
+            {
+                speed += 1;
+                isOn = false;
+                flashLight.SetActive(false);
+            }
+            else if (isOn == false)
+            {
+                speed -= 1;
+                isOn = true;
+                flashLight.SetActive(true);
+            }
+        }
+        
         art.transform.position = this.transform.position;
         
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
