@@ -13,4 +13,9 @@ public class EnemyAi : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
+
+    public void SetTarget(GameObject obj)
+    {
+        target = obj;
+    }
 }

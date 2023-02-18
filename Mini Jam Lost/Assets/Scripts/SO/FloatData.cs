@@ -6,6 +6,7 @@ using UnityEngine;
 public class FloatData : ScriptableObject
 {
     public float value;
+    public float OGValue;
 
     public void IncreaseFD(float amount)
     {
@@ -15,5 +16,15 @@ public class FloatData : ScriptableObject
     public void DecreaseFD(float amount)
     {
         value -= amount;
+    }
+
+    public void Set0()
+    {
+        value = 0;
+    }
+
+    public void SetOG()
+    {
+        value = OGValue;
     }
 }

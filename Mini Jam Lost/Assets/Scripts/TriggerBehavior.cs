@@ -8,7 +8,7 @@ public class TriggerBehavior : MonoBehaviour
 {
     public UnityEvent isTriggered;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         isTriggered.Invoke();
     }

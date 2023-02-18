@@ -15,6 +15,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Auto Monster/Tank Tac Toe/Assets/Scripts/Movement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SO/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/StartBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2LskZsfWeSmQoahyJmouvGNOmyE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -59,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676667251848</updated>
-      <workItem from="1676667271113" duration="7250000" />
+      <workItem from="1676667271113" duration="9707000" />
     </task>
     <servers />
   </component>

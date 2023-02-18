@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed;
+    public FloatData speed;
     public GameObject art;
 
     public GameObject flashLight;
@@ -16,13 +16,13 @@ public class Movement : MonoBehaviour
         {
             if (isOn == true)
             {
-                speed += 1;
+                speed.value += 1;
                 isOn = false;
                 flashLight.SetActive(false);
             }
             else if (isOn == false)
             {
-                speed -= 1;
+                speed.value -= 1;
                 isOn = true;
                 flashLight.SetActive(true);
             }
@@ -50,10 +50,10 @@ public class Movement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         Vector3 movementx = new Vector3(x, 0, 0);
-        transform.Translate(movementx * speed * Time.deltaTime);  
+        transform.Translate(movementx * speed.value * Time.deltaTime);  
         
         float y = Input.GetAxis("Vertical");
         Vector3 movementy = new Vector3(0, y, 0);
-        transform.Translate(movementy * speed * Time.deltaTime);
+        transform.Translate(movementy * speed.value * Time.deltaTime);
     }
 }
