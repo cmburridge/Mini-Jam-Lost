@@ -18,11 +18,18 @@ public class Timer : MonoBehaviour
     public float amount;
     void Start()
     {
+        time = 1;
         TimerStart();
     }
     
     public void TimerStart()
     {
+        StartCoroutine(timerTime());
+    }
+
+    public void resetTimer()
+    {
+        time = 2;
         StartCoroutine(timerTime());
     }
 
@@ -32,7 +39,7 @@ public class Timer : MonoBehaviour
         {
             time = timeRemaining.value;
             
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(time);
             timeRemaining.value -= amount * Time.deltaTime;
             imageFront.fillAmount = timeRemaining.value / timeRemaining.OGValue;
         }
@@ -46,8 +53,7 @@ public class Timer : MonoBehaviour
     public void IncreaseTime()
     {
         time = timeRemaining.value;
-        
-        timeRemaining.value += 24 * Time.deltaTime;
+        timeRemaining.value = timeRemaining.OGValue;
         imageFront.fillAmount = timeRemaining.value / timeRemaining.OGValue;
     }
 }

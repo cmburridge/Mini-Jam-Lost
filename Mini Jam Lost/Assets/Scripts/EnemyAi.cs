@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine.Utility;
@@ -17,5 +18,11 @@ public class EnemyAi : MonoBehaviour
     public void SetTarget(GameObject obj)
     {
         target = obj;
+    }
+
+    public void ResetTarget(GameObject obj)
+    {
+        target = obj;
+        this.transform.position = obj.transform.position;
     }
 }

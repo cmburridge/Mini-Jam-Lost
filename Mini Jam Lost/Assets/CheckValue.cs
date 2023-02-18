@@ -10,7 +10,7 @@ public class CheckValue : MonoBehaviour
     public float checkAmount;
 
     public UnityEvent isCheckedTrue;
-    
+
     public UnityEvent isCheckedFalse;
     private void Update()
     {

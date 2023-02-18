@@ -93,4 +93,9 @@ public class Movement : MonoBehaviour
         Vector3 movementy = new Vector3(0, y, 0);
         transform.Translate(movementy * speed.value * Time.deltaTime);
     }
+
+    public void ChangeLocation()
+    {
+        transform.position = Vector3.zero;
+    }
 }

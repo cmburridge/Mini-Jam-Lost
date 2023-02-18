@@ -9,6 +9,8 @@ public class ValueCheck : MonoBehaviour
     public FloatData fd;
     public float expectedValue;
 
+    public bool isGood;
+
     public UnityEvent valueEvent;
     private void Update()
     {
@@ -16,5 +18,10 @@ public class ValueCheck : MonoBehaviour
         {
             valueEvent.Invoke();
         }
+    }
+
+    public void CheckGood()
+    {
+        isGood = true;
     }
 }
