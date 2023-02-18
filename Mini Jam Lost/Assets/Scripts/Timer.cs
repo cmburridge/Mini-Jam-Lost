@@ -41,4 +41,12 @@ public class Timer : MonoBehaviour
             Timer0.Invoke();
         }
     }
+
+    public void IncreaseTime()
+    {
+        time = timeRemaining.value;
+        
+        timeRemaining.value += 24 * Time.deltaTime;
+        imageFront.fillAmount = timeRemaining.value / timeRemaining.OGValue;
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,25 +10,52 @@ public class Movement : MonoBehaviour
 
     public GameObject flashLight;
     public bool isOn = true;
-    
+    public FloatData power;
+    public float amount;
+
+    private float speedmax;
+    private float speedmin;
+
+    private void Start()
+    {
+        speed.value -= 1;
+        speedmin = speed.value;
+        speed.value += 1;
+        speedmax = speed.value;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (power.value != 0)
         {
-            if (isOn == true)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                speed.value += 1;
-                isOn = false;
-                flashLight.SetActive(false);
-            }
-            else if (isOn == false)
-            {
-                speed.value -= 1;
-                isOn = true;
-                flashLight.SetActive(true);
-            }
+                if (isOn == true)
+                {
+                    speed.value = speedmax;
+                    isOn = false;
+                    flashLight.SetActive(false);
+                }
+                else if (isOn == false)
+                {
+                    speed.value = speedmin;
+                    isOn = true;
+                    flashLight.SetActive(true);
+                }
+            }  
         }
-        
+        else if (power.value <= 0)
+        {
+            speed.value = speedmax;
+            isOn = false;
+            flashLight.SetActive(false);
+        }
+
+        if (isOn == true)
+        {
+            power.value -= amount * Time.deltaTime;
+        }
+
         art.transform.position = this.transform.position;
         
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
