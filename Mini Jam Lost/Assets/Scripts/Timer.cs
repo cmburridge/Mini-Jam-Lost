@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
     public UnityEvent Timer0;
 
     public float amount;
-    void Start()
+    void Awake()
     {
         time = 1;
         TimerStart();

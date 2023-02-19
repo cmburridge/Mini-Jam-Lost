@@ -18,11 +18,13 @@ public class EnemyAi : MonoBehaviour
     public void SetTarget(GameObject obj)
     {
         target = obj;
+        this.transform.LookAt(target.transform.position, Vector3.forward);
     }
 
     public void ResetTarget(GameObject obj)
     {
         target = obj;
+        this.transform.LookAt(target.transform.position, Vector3.forward);
         this.transform.position = obj.transform.position;
     }
 }
